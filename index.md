@@ -1,7 +1,7 @@
 ---
 ---
 
-Welcome to My Home Page. Here are some interesting projects that I have been working on [link](https://github.com/asopio).
+Welcome to My Home Page. Here are some descriptions of interesting projects that I have been working on. More projects can be found on my [github profile](https://github.com/asopio).
 
 <ul>
   {% for post in site.posts %}
