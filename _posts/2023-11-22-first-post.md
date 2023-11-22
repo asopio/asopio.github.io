@@ -1,11 +1,9 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Project: GNNs with Julia"
 author: "asopio"
 ---
 
-# Welcome
+# Project: GNNs with Julia
 
-**Hello world**, this is my first Jekyll blog post.
-
-I hope you like it!
+Here is a [link](https://github.com/asopio/julia-gnns-lundplane) to a project using the FLux.jl library in Julia to train and evaluate Graph Neural Networks. This is smiliar to the PyTorch code we used on ATLAS to create a LundNet jet tagger. Jets can be constructed and de-clustered in Julia using the python fastnet bindings.
