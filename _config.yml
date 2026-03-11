@@ -1,3 +1,14 @@
 # _config.yml
 
 title: "Alex Sopio"
+description: "Physicist & AI Scientist — research, publications, and blog"
+author: "Alex Sopio"
+url: "https://alexsop.io"
+baseurl: ""
+
+github_username: asopio
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-timeago
