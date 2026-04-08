@@ -7,7 +7,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 echo "Installing Python dependencies..."
-pip install -q -r requirements.txt
+python -m pip install -q -r requirements.txt
 
 echo "Building and serving at http://localhost:8000 (autoreload enabled)..."
 pelican content -s pelicanconf.py -o output --autoreload --listen --port 8000
