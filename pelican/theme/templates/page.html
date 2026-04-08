@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block active_page %}{{ page.slug }}{% endblock %}
+
+{% block title %}{{ page.title }} — {{ SITENAME }}{% endblock %}
+
+{% block description %}{{ page.description if page.description else SITE_DESCRIPTION }}{% endblock %}
+
+{% block content %}
+{{ page.content }}
+{% endblock %}
