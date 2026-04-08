@@ -17,7 +17,7 @@
     <header class="site-header">
       <div class="container">
         <a class="site-logo" href="{{ SITEURL }}/">{{ SITENAME }}</a>
-        <button class="nav-toggle" aria-label="Toggle navigation" id="navToggle">
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="siteNav" aria-expanded="false" id="navToggle">
           <span></span><span></span><span></span>
         </button>
         <nav class="site-nav" id="siteNav">
@@ -62,8 +62,9 @@
 
     <script>
       document.getElementById('navToggle').addEventListener('click', function() {
-        document.getElementById('siteNav').classList.toggle('open');
+        var isOpen = document.getElementById('siteNav').classList.toggle('open');
         this.classList.toggle('open');
+        this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
     </script>
   </body>
