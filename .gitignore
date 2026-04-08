@@ -5,3 +5,8 @@ _site/
 vendor/
 .bundle/
 Gemfile.lock
+
+# Pelican build output
+pelican/output/
+__pycache__/
+*.pyc

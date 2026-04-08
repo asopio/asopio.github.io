@@ -1,0 +1,40 @@
+# GitHub Actions workflow — Pelican site build and deploy
+#
+# Trigger: manual only (workflow_dispatch).
+# To activate automatic deployment when switching from Jekyll to Pelican:
+#   1. Add `push: branches: [main]` to the `on:` block below.
+#   2. In GitHub → Settings → Pages, set the source to the gh-pages branch.
+#
+name: Deploy Pelican Site
+
+on:
+  workflow_dispatch:  # manual trigger only — update when ready to go live
+
+permissions:
+  contents: write  # needed to push to gh-pages branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Pelican dependencies
+        run: pip install -r pelican/requirements.txt
+
+      - name: Build site
+        run: cd pelican && pelican content -s publishconf.py -o output
+
+      - name: Deploy to GitHub Pages (gh-pages branch)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./pelican/output
+          cname: alexsop.io
