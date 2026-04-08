@@ -6,7 +6,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 echo "Installing Python dependencies..."
-pip install -q -r requirements.txt
+python3 -m pip install -q -r requirements.txt
 
 echo "Building site..."
 pelican content -s pelicanconf.py -o output
